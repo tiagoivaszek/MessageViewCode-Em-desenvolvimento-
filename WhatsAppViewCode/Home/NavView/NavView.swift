@@ -27,7 +27,7 @@ class NavView: UIView {
     lazy var navBackGroundView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
+        view.backgroundColor = .clear
         view.layer.cornerRadius = 35
         view.layer.maskedCorners = [.layerMaxXMaxYCorner]
         view.layer.shadowColor = UIColor(white: 0, alpha: 0.02).cgColor
@@ -47,7 +47,7 @@ class NavView: UIView {
     lazy var searchBar: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = CustomColor.appLight
+        view.backgroundColor = .white
         view.clipsToBounds = true
         view.layer.cornerRadius = 20
         return view
@@ -91,7 +91,7 @@ class NavView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: "group")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        button.tintColor = .systemPink
+        button.tintColor = .black
         button.addTarget(self, action: #selector(self.tappedContactButton), for: .touchUpInside)
         return button
     }()
@@ -119,11 +119,13 @@ class NavView: UIView {
         self.addSubview(self.navBackGroundView)
         self.navBackGroundView.addSubview(navBar)
         self.navBar.addSubview(self.searchBar)
+        self.navBar.addSubview(self.stackView)
         self.searchBar.addSubview(self.searchLabel)
         self.searchBar.addSubview(self.searchButton)
-        self.navBar.addSubview(self.stackView)
         self.stackView.addArrangedSubview(self.conversationButton)
         self.stackView.addArrangedSubview(self.contactButton)
+        
+
     }
     
     private func setUpContrainsts(){
@@ -141,10 +143,10 @@ class NavView: UIView {
             self.navBar.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             
             
-            self.searchBar.leadingAnchor.constraint(equalTo: self.navBar.leadingAnchor, constant: 30),
+            self.searchBar.leadingAnchor.constraint(equalTo: self.navBar.leadingAnchor, constant: 20),
             self.searchBar.centerYAnchor.constraint(equalTo: self.navBar.centerYAnchor),
-            self.searchBar.trailingAnchor.constraint(equalTo: self.navBar.leadingAnchor, constant: -20),
-            self.searchBar.heightAnchor.constraint(equalToConstant: 55),
+            self.searchBar.trailingAnchor.constraint(equalTo: self.stackView.leadingAnchor, constant: -20),
+            self.searchBar.heightAnchor.constraint(equalToConstant: 40),
             
             
             self.stackView.trailingAnchor.constraint(equalTo: self.navBar.trailingAnchor, constant: -30),
