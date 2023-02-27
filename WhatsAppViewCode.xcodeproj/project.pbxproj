@@ -23,6 +23,9 @@
 		B86E48DC29A0009B0037FCDC /* Extension+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E48DB29A0009B0037FCDC /* Extension+Button.swift */; };
 		B86E48DE29A003610037FCDC /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E48DD29A003610037FCDC /* Extension+String.swift */; };
 		B86E48E029A007240037FCDC /* button.wav in Resources */ = {isa = PBXBuildFile; fileRef = B86E48DF29A007240037FCDC /* button.wav */; };
+		B86E48E329ACDA420037FCDC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E48E229ACDA420037FCDC /* HomeViewController.swift */; };
+		B86E48E629ACDA9B0037FCDC /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E48E529ACDA9B0037FCDC /* HomeScreen.swift */; };
+		B86E48E929ACDB9C0037FCDC /* NavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E48E829ACDB9C0037FCDC /* NavView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		B86E48DB29A0009B0037FCDC /* Extension+Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Button.swift"; sourceTree = "<group>"; };
 		B86E48DD29A003610037FCDC /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		B86E48DF29A007240037FCDC /* button.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button.wav; sourceTree = SOURCE_ROOT; };
+		B86E48E229ACDA420037FCDC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B86E48E529ACDA9B0037FCDC /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		B86E48E829ACDB9C0037FCDC /* NavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
 		F50376005E4A5DBD2CD45A99 /* Pods_WhatsAppViewCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsAppViewCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -103,8 +109,9 @@
 			children = (
 				B86E48D1299FF8930037FCDC /* Utils */,
 				B86E48CC299FC2750037FCDC /* Alert */,
-				B86E48BA299FBD1C0037FCDC /* Login */,
+				B86E48E129ACDA100037FCDC /* Home */,
 				B86E48BF299FBD1D0037FCDC /* Register */,
+				B86E48BA299FBD1C0037FCDC /* Login */,
 				B86E48A6299FBCC00037FCDC /* AppDelegate.swift */,
 				B86E48A8299FBCC00037FCDC /* SceneDelegate.swift */,
 				B86E48AF299FBCCC0037FCDC /* Assets.xcassets */,
@@ -143,18 +150,18 @@
 		B86E48BF299FBD1D0037FCDC /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				B86E48C0299FBD1D0037FCDC /* VC */,
+				B86E48C0299FBD1D0037FCDC /* ViewController */,
 				B86E48C2299FBD1D0037FCDC /* Screen */,
 			);
 			path = Register;
 			sourceTree = "<group>";
 		};
-		B86E48C0299FBD1D0037FCDC /* VC */ = {
+		B86E48C0299FBD1D0037FCDC /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				B86E48C1299FBD1D0037FCDC /* RegisterVC.swift */,
 			);
-			path = VC;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		B86E48C2299FBD1D0037FCDC /* Screen */ = {
@@ -202,6 +209,40 @@
 				B86E48DF29A007240037FCDC /* button.wav */,
 			);
 			path = Sound;
+			sourceTree = "<group>";
+		};
+		B86E48E129ACDA100037FCDC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B86E48EA29ACE12A0037FCDC /* ViewController */,
+				B86E48E429ACDA800037FCDC /* Screen */,
+				B86E48E729ACDB690037FCDC /* NavView */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B86E48E429ACDA800037FCDC /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				B86E48E529ACDA9B0037FCDC /* HomeScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		B86E48E729ACDB690037FCDC /* NavView */ = {
+			isa = PBXGroup;
+			children = (
+				B86E48E829ACDB9C0037FCDC /* NavView.swift */,
+			);
+			path = NavView;
+			sourceTree = "<group>";
+		};
+		B86E48EA29ACE12A0037FCDC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B86E48E229ACDA420037FCDC /* HomeViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,11 +367,14 @@
 				B86E48C7299FBD1E0037FCDC /* RegisterScreen.swift in Sources */,
 				B86E48C6299FBD1E0037FCDC /* RegisterVC.swift in Sources */,
 				B86E48D5299FF9BF0037FCDC /* Custom.swift in Sources */,
+				B86E48E929ACDB9C0037FCDC /* NavView.swift in Sources */,
+				B86E48E629ACDA9B0037FCDC /* HomeScreen.swift in Sources */,
 				B86E48A9299FBCC00037FCDC /* SceneDelegate.swift in Sources */,
 				B86E48DE29A003610037FCDC /* Extension+String.swift in Sources */,
 				B86E48C5299FBD1E0037FCDC /* LoginScreen.swift in Sources */,
 				B86E48CE299FC2880037FCDC /* Alert.swift in Sources */,
 				B86E48DC29A0009B0037FCDC /* Extension+Button.swift in Sources */,
+				B86E48E329ACDA420037FCDC /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
