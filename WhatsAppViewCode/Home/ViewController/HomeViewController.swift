@@ -32,6 +32,7 @@ class HomeViewController: UIViewController {
         self.view.backgroundColor = CustomColor.appLight
         self.configHomeView()
         self.configCollectionView()
+        self.configAlert()
               
     }
     
@@ -48,6 +49,10 @@ class HomeViewController: UIViewController {
     
     private func configCollectionView(){
         self.screen.delegateCollectionView(delegate: self, dataSource: self)
+    }
+    
+    private func configAlert(){
+        self.alert = Alert(controller: self)
     }
     
     

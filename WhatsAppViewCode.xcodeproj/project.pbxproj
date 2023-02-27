@@ -26,6 +26,8 @@
 		B86E48E329ACDA420037FCDC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E48E229ACDA420037FCDC /* HomeViewController.swift */; };
 		B86E48E629ACDA9B0037FCDC /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E48E529ACDA9B0037FCDC /* HomeScreen.swift */; };
 		B86E48E929ACDB9C0037FCDC /* NavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E48E829ACDB9C0037FCDC /* NavView.swift */; };
+		B86E48ED29AD3CAE0037FCDC /* MessageAllModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E48EC29AD3CAE0037FCDC /* MessageAllModel.swift */; };
+		B86E48F029AD3F380037FCDC /* MessageLastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E48EF29AD3F370037FCDC /* MessageLastCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		B86E48E229ACDA420037FCDC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B86E48E529ACDA9B0037FCDC /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		B86E48E829ACDB9C0037FCDC /* NavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
+		B86E48EC29AD3CAE0037FCDC /* MessageAllModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAllModel.swift; sourceTree = "<group>"; };
+		B86E48EF29AD3F370037FCDC /* MessageLastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLastCollectionViewCell.swift; sourceTree = "<group>"; };
 		F50376005E4A5DBD2CD45A99 /* Pods_WhatsAppViewCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsAppViewCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -107,6 +111,7 @@
 		B86E48A5299FBCC00037FCDC /* WhatsAppViewCode */ = {
 			isa = PBXGroup;
 			children = (
+				B86E48EB29AD3C880037FCDC /* Model */,
 				B86E48D1299FF8930037FCDC /* Utils */,
 				B86E48CC299FC2750037FCDC /* Alert */,
 				B86E48E129ACDA100037FCDC /* Home */,
@@ -214,6 +219,7 @@
 		B86E48E129ACDA100037FCDC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B86E48EE29AD3EFD0037FCDC /* Cell */,
 				B86E48EA29ACE12A0037FCDC /* ViewController */,
 				B86E48E429ACDA800037FCDC /* Screen */,
 				B86E48E729ACDB690037FCDC /* NavView */,
@@ -243,6 +249,22 @@
 				B86E48E229ACDA420037FCDC /* HomeViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B86E48EB29AD3C880037FCDC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B86E48EC29AD3CAE0037FCDC /* MessageAllModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B86E48EE29AD3EFD0037FCDC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B86E48EF29AD3F370037FCDC /* MessageLastCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,6 +388,7 @@
 				B86E48C4299FBD1E0037FCDC /* LoginVC.swift in Sources */,
 				B86E48C7299FBD1E0037FCDC /* RegisterScreen.swift in Sources */,
 				B86E48C6299FBD1E0037FCDC /* RegisterVC.swift in Sources */,
+				B86E48ED29AD3CAE0037FCDC /* MessageAllModel.swift in Sources */,
 				B86E48D5299FF9BF0037FCDC /* Custom.swift in Sources */,
 				B86E48E929ACDB9C0037FCDC /* NavView.swift in Sources */,
 				B86E48E629ACDA9B0037FCDC /* HomeScreen.swift in Sources */,
@@ -374,6 +397,7 @@
 				B86E48C5299FBD1E0037FCDC /* LoginScreen.swift in Sources */,
 				B86E48CE299FC2880037FCDC /* Alert.swift in Sources */,
 				B86E48DC29A0009B0037FCDC /* Extension+Button.swift in Sources */,
+				B86E48F029AD3F380037FCDC /* MessageLastCollectionViewCell.swift in Sources */,
 				B86E48E329ACDA420037FCDC /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
