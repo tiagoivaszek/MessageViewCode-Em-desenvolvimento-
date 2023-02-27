@@ -81,7 +81,7 @@ class NavView: UIView {
     lazy var conversationButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "logo")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.setImage(UIImage(systemName:"message")?.withRenderingMode(.alwaysTemplate), for: .normal)
         button.tintColor = .systemPink
         button.addTarget(self, action: #selector(self.tappedConversationButton), for: .touchUpInside)
         return button
@@ -137,7 +137,7 @@ class NavView: UIView {
             
             self.navBar.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             self.navBar.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            self.navBar.topAnchor.constraint(equalTo: self.topAnchor),
+            self.navBar.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.navBar.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             
             

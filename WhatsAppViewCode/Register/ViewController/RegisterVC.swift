@@ -71,8 +71,10 @@ extension RegisterVC: RegisterScreenProtocol{
                 }
                 
                 self.alert.getAlert(titulo: "Parabéns", mensagem: "Usuario cadastrado com sucesso!!") {
-                    self.navigationController?.popViewController(animated: true)
-    }
+                    let vc = HomeViewController()
+                    let navVC = UINavigationController(rootViewController: vc)
+                    navVC.modalPresentationStyle = .fullScreen
+                    self.present(navVC, animated: true)    }
             }
             
         }
