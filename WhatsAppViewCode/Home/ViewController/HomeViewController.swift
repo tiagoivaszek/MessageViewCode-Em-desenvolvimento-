@@ -10,10 +10,6 @@ import FirebaseAuth
 import FirebaseFirestore
 
 class HomeViewController: UIViewController {
-
-    
-
-    
     
     var screen: HomeScreen!
     var auth: Auth!

@@ -28,6 +28,7 @@
 		B86E48E929ACDB9C0037FCDC /* NavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E48E829ACDB9C0037FCDC /* NavView.swift */; };
 		B86E48ED29AD3CAE0037FCDC /* MessageAllModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E48EC29AD3CAE0037FCDC /* MessageAllModel.swift */; };
 		B86E48F029AD3F380037FCDC /* MessageLastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E48EF29AD3F370037FCDC /* MessageLastCollectionViewCell.swift */; };
+		B86E48F229AD423D0037FCDC /* MessageDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E48F129AD423D0037FCDC /* MessageDetailCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		B86E48E829ACDB9C0037FCDC /* NavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
 		B86E48EC29AD3CAE0037FCDC /* MessageAllModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAllModel.swift; sourceTree = "<group>"; };
 		B86E48EF29AD3F370037FCDC /* MessageLastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLastCollectionViewCell.swift; sourceTree = "<group>"; };
+		B86E48F129AD423D0037FCDC /* MessageDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		F50376005E4A5DBD2CD45A99 /* Pods_WhatsAppViewCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsAppViewCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -219,10 +221,10 @@
 		B86E48E129ACDA100037FCDC /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				B86E48EE29AD3EFD0037FCDC /* Cell */,
 				B86E48EA29ACE12A0037FCDC /* ViewController */,
 				B86E48E429ACDA800037FCDC /* Screen */,
 				B86E48E729ACDB690037FCDC /* NavView */,
+				B86E48EE29AD3EFD0037FCDC /* Cell */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -263,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				B86E48EF29AD3F370037FCDC /* MessageLastCollectionViewCell.swift */,
+				B86E48F129AD423D0037FCDC /* MessageDetailCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				B86E48DC29A0009B0037FCDC /* Extension+Button.swift in Sources */,
 				B86E48F029AD3F380037FCDC /* MessageLastCollectionViewCell.swift in Sources */,
 				B86E48E329ACDA420037FCDC /* HomeViewController.swift in Sources */,
+				B86E48F229AD423D0037FCDC /* MessageDetailCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

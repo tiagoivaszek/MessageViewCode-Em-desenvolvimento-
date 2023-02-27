@@ -51,37 +51,57 @@ extension RegisterVC: RegisterScreenProtocol{
     }
     
     func actionRegisterButton() {
-
+        
         guard let register = self.registerScreen else {return}
         
         self.auth.createUser(withEmail: register.getEmail(), password: register.getPassword()) { result, error in
             
             if error != nil {
-                self.alert.getAlert(titulo: "Atenção", mensagem: "Erro ao cadastrar, verifique os dados e tente novamente")
-            }else{
                 
-                //salvar dados no firestore
+                let erroR = error! as NSError
                 
-                if let idUsuario = result?.user.uid{
-                    self.firestore.collection("usuarios").document(idUsuario).setData([
-                        "nome": self.registerScreen.getName(),
-                        "email": self.registerScreen.getEmail(),
-                        "id": idUsuario
-                    ])
+                if let codigoErro = erroR.userInfo["FIRAuthErrorUserInfoNameKey"]{
+                    
+                    let erroTexto = codigoErro as! String
+                    var mensagemErro = ""
+                    
+                    switch erroTexto {
+                        
+                    case "ERROR_INVALID_EMAIL" : mensagemErro = "E-mail inválido, digite um e-mail válido!"
+                        break
+                    case "ERROR_WEAK_PASSWORD" : mensagemErro = "A senha precisa ter no mínimo 6 caracteres, com letras e números."
+                        break
+                    case "ERROR_EMAIL_ALREADY_IN_USE": mensagemErro = "Esse e-mail já está sendo utilizado, crie sua conta com outro e-mail."
+                        break
+                    default: mensagemErro = "Dados digitados incorretos"
+                    }
+                    
+                    self.alert.getAlert(titulo: "Atenção", mensagem: mensagemErro)
+                    
+                }else{
+                    
+                    //salvar dados no firestore
+                    
+                    if let idUsuario = result?.user.uid{
+                        self.firestore.collection("usuarios").document(idUsuario).setData([
+                            "nome": self.registerScreen.getName(),
+                            "email": self.registerScreen.getEmail(),
+                            "id": idUsuario
+                        ])
+                    }
+                    
+                    self.alert.getAlert(titulo: "Parabéns", mensagem: "Usuario cadastrado com sucesso!!") {
+                        let vc = HomeViewController()
+                        let navVC = UINavigationController(rootViewController: vc)
+                        navVC.modalPresentationStyle = .fullScreen
+                        self.present(navVC, animated: true)    }
                 }
                 
-                self.alert.getAlert(titulo: "Parabéns", mensagem: "Usuario cadastrado com sucesso!!") {
-                    let vc = HomeViewController()
-                    let navVC = UINavigationController(rootViewController: vc)
-                    navVC.modalPresentationStyle = .fullScreen
-                    self.present(navVC, animated: true)    }
             }
             
         }
-
+        
     }
-    
-    
     
     
 }
