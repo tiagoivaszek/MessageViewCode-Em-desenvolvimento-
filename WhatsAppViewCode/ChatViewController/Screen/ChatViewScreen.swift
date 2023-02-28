@@ -146,11 +146,11 @@ class ChatViewScreen: UIView {
             self.messageBar.heightAnchor.constraint(equalToConstant: 55),
             self.messageBar.centerYAnchor.constraint(equalTo: self.messageInputView.centerYAnchor),
             
-            self.sendBtn.trailingAnchor.constraint(equalTo: self.messageBar.trailingAnchor, constant: -15),
+            self.sendBtn.trailingAnchor.constraint(equalTo: self.messageBar.trailingAnchor, constant: -5),
             self.sendBtn.heightAnchor.constraint(equalToConstant: 55),
             self.sendBtn.widthAnchor.constraint(equalToConstant: 55),
-            self.sendBtn.bottomAnchor.constraint(equalTo: self.messageBar.bottomAnchor, constant: -10),
-            
+            self.sendBtn.centerYAnchor.constraint(equalTo: self.messageBar.centerYAnchor),
+
             self.inputMessageTextField.leadingAnchor.constraint(equalTo: self.messageBar.leadingAnchor,constant: 20),
             self.inputMessageTextField.trailingAnchor.constraint(equalTo: self.sendBtn.leadingAnchor,constant: -5),
             self.inputMessageTextField.heightAnchor.constraint(equalToConstant: 45),

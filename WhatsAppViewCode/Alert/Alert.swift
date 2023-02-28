@@ -38,6 +38,7 @@ class Alert: NSObject{
         alert.addTextField(configurationHandler: {(textField: UITextField) in
             _textField = textField
             textField.placeholder = "Email:"
+            textField.keyboardType = .emailAddress
         })
         self.controller.present(alert, animated: true, completion: nil)
     }
