@@ -47,7 +47,8 @@ class NavView: UIView {
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.translatesAutoresizingMaskIntoConstraints = false
-        searchBar.backgroundColor = .clear
+        searchBar.barTintColor = .gray
+        searchBar.searchTextField.borderStyle = .none
         searchBar.placeholder = "Digite aqui"
         searchBar.clipsToBounds = true
         searchBar.layer.cornerRadius = 20
