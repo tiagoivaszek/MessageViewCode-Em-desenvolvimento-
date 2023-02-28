@@ -46,6 +46,7 @@ extension RegisterVC: UITextFieldDelegate{
 }
 
 extension RegisterVC: RegisterScreenProtocol{
+    
     func actionBackButton() {
         self.navigationController?.popViewController(animated: true)
     }
@@ -77,19 +78,18 @@ extension RegisterVC: RegisterScreenProtocol{
                     }
                     
                     self.alert.getAlert(titulo: "Atenção", mensagem: mensagemErro)
-                    
-                }else{
-                    
-                    //salvar dados no firestore
-                    
-                    if let idUsuario = result?.user.uid{
-                        self.firestore.collection("usuarios").document(idUsuario).setData([
-                            "nome": self.registerScreen.getName(),
-                            "email": self.registerScreen.getEmail(),
-                            "id": idUsuario
-                        ])
-                    }
-                    
+                }
+                
+            }else{
+                
+                //salvar dados no firestore
+                
+                if let idUsuario = result?.user.uid{
+                    self.firestore.collection("usuarios").document(idUsuario).setData([
+                        "nome": self.registerScreen.getName(),
+                        "email": self.registerScreen.getEmail(),
+                        "id": idUsuario
+                    ])
                 }
                 
             }
@@ -101,7 +101,11 @@ extension RegisterVC: RegisterScreenProtocol{
             
         }
         
+        
+        
     }
     
-    
 }
+
+    
+
