@@ -59,13 +59,13 @@ class MessageDetailCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func seuUpViewContact(contact: Contact){
+    func seuUpViewContact(contact: Contact){
         
         self.setUserName(userName: contact.nome ?? "")
         
     }
     
-    private func seuUpViewConversation(conversation: Conversation){
+    func seuUpViewConversation(conversation: Conversation){
         
         self.setUserNameAttributedText(conversation: conversation)
         
@@ -73,7 +73,7 @@ class MessageDetailCollectionViewCell: UICollectionViewCell {
     
     func setUserName(userName: String){
         
-        let attributText = NSMutableAttributedString(string: userName, attributes: [NSAttributedString.Key.font : UIFont(name: CustomFont.poppinsMedium, size: 16) ?? UIFont(), NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        _ = NSMutableAttributedString(string: userName, attributes: [NSAttributedString.Key.font : UIFont(name: CustomFont.poppinsMedium, size: 16) ?? UIFont(), NSAttributedString.Key.foregroundColor: UIColor.darkGray])
         
     }
     
