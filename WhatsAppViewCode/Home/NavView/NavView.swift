@@ -44,29 +44,14 @@ class NavView: UIView {
         return view
     }()
     
-    lazy var searchBar: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
-        view.clipsToBounds = true
-        view.layer.cornerRadius = 20
-        return view
-    }()
-    
-    lazy var searchLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Digite aqui"
-        label.font = UIFont(name: CustomFont.poppinsMedium, size: 16)
-        label.textColor = .lightGray
-        return label
-    }()
-    
-    lazy var searchButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "search"), for: .normal)
-        return button
+    lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.backgroundColor = .clear
+        searchBar.placeholder = "Digite aqui"
+        searchBar.clipsToBounds = true
+        searchBar.layer.cornerRadius = 20
+        return searchBar
     }()
     
     let stackView: UIStackView = {
@@ -120,8 +105,6 @@ class NavView: UIView {
         self.navBackGroundView.addSubview(navBar)
         self.navBar.addSubview(self.searchBar)
         self.navBar.addSubview(self.stackView)
-        self.searchBar.addSubview(self.searchLabel)
-        self.searchBar.addSubview(self.searchButton)
         self.stackView.addArrangedSubview(self.conversationButton)
         self.stackView.addArrangedSubview(self.contactButton)
         
@@ -153,16 +136,6 @@ class NavView: UIView {
             self.stackView.centerYAnchor.constraint(equalTo: self.navBar.centerYAnchor),
             self.stackView.widthAnchor.constraint(equalToConstant: 100),
             self.stackView.heightAnchor.constraint(equalToConstant: 30),
-
-            
-            self.searchLabel.leadingAnchor.constraint(equalTo: self.searchBar.leadingAnchor, constant: 25),
-            self.searchLabel.centerYAnchor.constraint(equalTo: self.searchBar.centerYAnchor),
-
-            
-            self.searchButton.trailingAnchor.constraint(equalTo: self.searchBar.trailingAnchor, constant: -20),
-            self.searchButton.centerYAnchor.constraint(equalTo: self.searchBar.centerYAnchor),
-            self.searchButton.widthAnchor.constraint(equalToConstant: 20),
-            self.searchButton.heightAnchor.constraint(equalToConstant: 20)
             
             
         ])
