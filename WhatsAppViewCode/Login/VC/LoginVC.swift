@@ -55,9 +55,6 @@ extension LoginVC: LoginScreenProtocol{
     
     func actionLoginButton() {
         
-        //let vc: HomeVC  = HomeVC()
-        //self.navigationController?.pushViewController(vc, animated: true)
-        
         guard let login = loginScreen else {return}
 
         self.auth.signIn(withEmail: login.getEmail(), password: login.getPassword()) { usuario, error in
