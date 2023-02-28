@@ -187,8 +187,26 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        if self.screenContact ?? false{
+            if indexPath.row == self.listaContact.count{
+                self.alert?.addContact(completion: { value in
+                    self.contato?.addContact(email: value, emailUsuarioLogado: self.emailUsuarioLogado ?? "", idUsuario: self.idUsuarioLogado ?? "")
+                })
+                
+            }else{
+                let VC:ChatViewController = ChatViewController()
+                VC.contato = self.listaContact[indexPath.row]
+                self.navigationController?.pushViewController(VC, animated: true)
+            }
+        }else{
+            
+            let VC:ChatViewController = ChatViewController()
+            let dados = self.listaConversa[indexPath.row]
+            let contato:Contact = Contact(id: dados.idDestinatario ?? "", nome: dados.nome ?? "")
+            VC.contato = contato
+            self.navigationController?.pushViewController(VC, animated: true)
+        }
         
-        print(indexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

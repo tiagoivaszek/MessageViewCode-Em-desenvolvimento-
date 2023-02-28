@@ -30,6 +30,11 @@
 		B86E48F029AD3F380037FCDC /* MessageLastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E48EF29AD3F370037FCDC /* MessageLastCollectionViewCell.swift */; };
 		B86E48F229AD423D0037FCDC /* MessageDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E48F129AD423D0037FCDC /* MessageDetailCollectionViewCell.swift */; };
 		B86E48F529AE3E140037FCDC /* ContatoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E48F429AE3E130037FCDC /* ContatoController.swift */; };
+		B86E490829AE92050037FCDC /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E490029AE92040037FCDC /* ChatViewController.swift */; };
+		B86E490929AE92050037FCDC /* ChatNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E490229AE92040037FCDC /* ChatNavigationView.swift */; };
+		B86E490A29AE92050037FCDC /* OutgoingTextMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E490429AE92040037FCDC /* OutgoingTextMessageTableViewCell.swift */; };
+		B86E490B29AE92060037FCDC /* IncomingTextMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E490529AE92040037FCDC /* IncomingTextMessageTableViewCell.swift */; };
+		B86E490C29AE92060037FCDC /* ChatViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E490729AE92040037FCDC /* ChatViewScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +67,11 @@
 		B86E48EF29AD3F370037FCDC /* MessageLastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLastCollectionViewCell.swift; sourceTree = "<group>"; };
 		B86E48F129AD423D0037FCDC /* MessageDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		B86E48F429AE3E130037FCDC /* ContatoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContatoController.swift; sourceTree = "<group>"; };
+		B86E490029AE92040037FCDC /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		B86E490229AE92040037FCDC /* ChatNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatNavigationView.swift; sourceTree = "<group>"; };
+		B86E490429AE92040037FCDC /* OutgoingTextMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutgoingTextMessageTableViewCell.swift; sourceTree = "<group>"; };
+		B86E490529AE92040037FCDC /* IncomingTextMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomingTextMessageTableViewCell.swift; sourceTree = "<group>"; };
+		B86E490729AE92040037FCDC /* ChatViewScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewScreen.swift; sourceTree = "<group>"; };
 		F50376005E4A5DBD2CD45A99 /* Pods_WhatsAppViewCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsAppViewCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -115,6 +125,7 @@
 		B86E48A5299FBCC00037FCDC /* WhatsAppViewCode */ = {
 			isa = PBXGroup;
 			children = (
+				B86E48FF29AE92040037FCDC /* ChatViewController */,
 				B86E48EB29AD3C880037FCDC /* Model */,
 				B86E48D1299FF8930037FCDC /* Utils */,
 				B86E48CC299FC2750037FCDC /* Alert */,
@@ -281,6 +292,42 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		B86E48FF29AE92040037FCDC /* ChatViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B86E490029AE92040037FCDC /* ChatViewController.swift */,
+				B86E490129AE92040037FCDC /* ChatNavigationView */,
+				B86E490329AE92040037FCDC /* Cell */,
+				B86E490629AE92040037FCDC /* Screen */,
+			);
+			path = ChatViewController;
+			sourceTree = "<group>";
+		};
+		B86E490129AE92040037FCDC /* ChatNavigationView */ = {
+			isa = PBXGroup;
+			children = (
+				B86E490229AE92040037FCDC /* ChatNavigationView.swift */,
+			);
+			path = ChatNavigationView;
+			sourceTree = "<group>";
+		};
+		B86E490329AE92040037FCDC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B86E490429AE92040037FCDC /* OutgoingTextMessageTableViewCell.swift */,
+				B86E490529AE92040037FCDC /* IncomingTextMessageTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B86E490629AE92040037FCDC /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				B86E490729AE92040037FCDC /* ChatViewScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -399,6 +446,7 @@
 			files = (
 				B86E48D3299FF8B70037FCDC /* Extension+UiView.swift in Sources */,
 				B86E48A7299FBCC00037FCDC /* AppDelegate.swift in Sources */,
+				B86E490929AE92050037FCDC /* ChatNavigationView.swift in Sources */,
 				B86E48C4299FBD1E0037FCDC /* LoginVC.swift in Sources */,
 				B86E48C7299FBD1E0037FCDC /* RegisterScreen.swift in Sources */,
 				B86E48C6299FBD1E0037FCDC /* RegisterVC.swift in Sources */,
@@ -408,11 +456,15 @@
 				B86E48F529AE3E140037FCDC /* ContatoController.swift in Sources */,
 				B86E48E629ACDA9B0037FCDC /* HomeScreen.swift in Sources */,
 				B86E48A9299FBCC00037FCDC /* SceneDelegate.swift in Sources */,
+				B86E490C29AE92060037FCDC /* ChatViewScreen.swift in Sources */,
+				B86E490829AE92050037FCDC /* ChatViewController.swift in Sources */,
 				B86E48DE29A003610037FCDC /* Extension+String.swift in Sources */,
 				B86E48C5299FBD1E0037FCDC /* LoginScreen.swift in Sources */,
 				B86E48CE299FC2880037FCDC /* Alert.swift in Sources */,
 				B86E48DC29A0009B0037FCDC /* Extension+Button.swift in Sources */,
 				B86E48F029AD3F380037FCDC /* MessageLastCollectionViewCell.swift in Sources */,
+				B86E490B29AE92060037FCDC /* IncomingTextMessageTableViewCell.swift in Sources */,
+				B86E490A29AE92050037FCDC /* OutgoingTextMessageTableViewCell.swift in Sources */,
 				B86E48E329ACDA420037FCDC /* HomeViewController.swift in Sources */,
 				B86E48F229AD423D0037FCDC /* MessageDetailCollectionViewCell.swift in Sources */,
 			);
