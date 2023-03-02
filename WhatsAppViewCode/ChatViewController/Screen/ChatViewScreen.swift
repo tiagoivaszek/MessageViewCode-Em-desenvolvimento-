@@ -26,6 +26,7 @@ class ChatViewScreen: UIView {
     lazy var navView:ChatNavigationView = {
         let view = ChatNavigationView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
         return view
     }()
     

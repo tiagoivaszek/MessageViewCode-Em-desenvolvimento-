@@ -33,6 +33,7 @@ class OutgoingTextMessageTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.addElemented()
         self.setupContraints()
+        self.backgroundColor = .clear
     }
     
     func addElemented(){
