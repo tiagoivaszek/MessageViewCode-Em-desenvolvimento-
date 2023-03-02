@@ -13,11 +13,4 @@ extension String {
         return (self as NSString).size(withAttributes: [NSAttributedString.Key.font : font])
     }
     
-    func heighWithContrainedWidth(width: CGFloat, font: UIFont) -> CGFloat {
-        
-        let constrainRect = CGSize(width: width, height: .greatestFiniteMagnitude)
-        let boudingBox = self.boundingRect(with: constrainRect, options: [.usesLineFragmentOrigin, .usesFontLeading], attributes: [NSAttributedString.Key.font : font], context: nil)
-        return boudingBox.height
-        
-    }
 }

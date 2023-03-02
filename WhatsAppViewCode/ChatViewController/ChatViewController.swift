@@ -151,10 +151,8 @@ extension ChatViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let desc:String = self.listaMensagens[indexPath.row].texto ?? ""
         let font = UIFont(name: CustomFont.poppinsSemiBold, size: 14) ?? UIFont()
-        let estimateHeight = desc.heighWithContrainedWidth(width: 220, font: font)
-        return CGFloat(65 + estimateHeight)
+        return CGFloat(60)
     }
     
 
