@@ -145,7 +145,7 @@ class LoginScreen: UIView {
     }
     private func configButtonEnable(enable: Bool){
         if enable{
-            self.loginButton.setTitleColor(.white, for: .normal)
+            self.loginButton.setTitleColor(.red, for: .normal)
             self.loginButton.isEnabled = true
         }else{
             self.loginButton.setTitleColor(.darkGray, for: .normal)

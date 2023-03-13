@@ -145,51 +145,19 @@
 		B86E48BA299FBD1C0037FCDC /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				B86E48BB299FBD1C0037FCDC /* VC */,
-				B86E48BD299FBD1C0037FCDC /* Screen */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		B86E48BB299FBD1C0037FCDC /* VC */ = {
-			isa = PBXGroup;
-			children = (
 				B86E48BC299FBD1C0037FCDC /* LoginVC.swift */,
-			);
-			path = VC;
-			sourceTree = "<group>";
-		};
-		B86E48BD299FBD1C0037FCDC /* Screen */ = {
-			isa = PBXGroup;
-			children = (
 				B86E48BE299FBD1C0037FCDC /* LoginScreen.swift */,
 			);
-			path = Screen;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		B86E48BF299FBD1D0037FCDC /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				B86E48C0299FBD1D0037FCDC /* ViewController */,
-				B86E48C2299FBD1D0037FCDC /* Screen */,
-			);
-			path = Register;
-			sourceTree = "<group>";
-		};
-		B86E48C0299FBD1D0037FCDC /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
 				B86E48C1299FBD1D0037FCDC /* RegisterVC.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		B86E48C2299FBD1D0037FCDC /* Screen */ = {
-			isa = PBXGroup;
-			children = (
 				B86E48C3299FBD1D0037FCDC /* RegisterScreen.swift */,
 			);
-			path = Screen;
+			path = Register;
 			sourceTree = "<group>";
 		};
 		B86E48CC299FC2750037FCDC /* Alert */ = {
@@ -234,35 +202,19 @@
 		B86E48E129ACDA100037FCDC /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				B86E48F329AE3DF80037FCDC /* Controller */,
 				B86E48EA29ACE12A0037FCDC /* ViewController */,
-				B86E48E429ACDA800037FCDC /* Screen */,
-				B86E48E729ACDB690037FCDC /* NavView */,
+				B86E48F329AE3DF80037FCDC /* Controller */,
 				B86E48EE29AD3EFD0037FCDC /* Cell */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		B86E48E429ACDA800037FCDC /* Screen */ = {
-			isa = PBXGroup;
-			children = (
-				B86E48E529ACDA9B0037FCDC /* HomeScreen.swift */,
-			);
-			path = Screen;
-			sourceTree = "<group>";
-		};
-		B86E48E729ACDB690037FCDC /* NavView */ = {
-			isa = PBXGroup;
-			children = (
-				B86E48E829ACDB9C0037FCDC /* NavView.swift */,
-			);
-			path = NavView;
 			sourceTree = "<group>";
 		};
 		B86E48EA29ACE12A0037FCDC /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				B86E48E229ACDA420037FCDC /* HomeViewController.swift */,
+				B86E48E529ACDA9B0037FCDC /* HomeScreen.swift */,
+				B86E48E829ACDB9C0037FCDC /* NavView.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -296,19 +248,11 @@
 			isa = PBXGroup;
 			children = (
 				B86E490029AE92040037FCDC /* ChatViewController.swift */,
-				B86E490129AE92040037FCDC /* ChatNavigationView */,
+				B86E490729AE92040037FCDC /* ChatViewScreen.swift */,
+				B86E490229AE92040037FCDC /* ChatNavigationView.swift */,
 				B86E490329AE92040037FCDC /* Cell */,
-				B86E490629AE92040037FCDC /* Screen */,
 			);
 			path = ChatViewController;
-			sourceTree = "<group>";
-		};
-		B86E490129AE92040037FCDC /* ChatNavigationView */ = {
-			isa = PBXGroup;
-			children = (
-				B86E490229AE92040037FCDC /* ChatNavigationView.swift */,
-			);
-			path = ChatNavigationView;
 			sourceTree = "<group>";
 		};
 		B86E490329AE92040037FCDC /* Cell */ = {
@@ -318,14 +262,6 @@
 				B86E490529AE92040037FCDC /* IncomingTextMessageTableViewCell.swift */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		B86E490629AE92040037FCDC /* Screen */ = {
-			isa = PBXGroup;
-			children = (
-				B86E490729AE92040037FCDC /* ChatViewScreen.swift */,
-			);
-			path = Screen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
