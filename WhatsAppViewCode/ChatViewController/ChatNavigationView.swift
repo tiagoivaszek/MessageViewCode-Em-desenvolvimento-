@@ -9,8 +9,8 @@ import UIKit
 
 class ChatNavigationView: UIView {
     
-    var controller:ChatViewController?{
-        didSet{
+    var controller:ChatViewController? {
+        didSet {
             self.backBtn.addTarget(controller, action: #selector(ChatViewController.tappedBackButton), for: .touchUpInside)
         }
     }
@@ -84,7 +84,7 @@ class ChatNavigationView: UIView {
     }
     
 
-    func addElemented(){
+    func addElemented() {
         self.addSubview(self.navBackGroundView)
         self.navBackGroundView.addSubview(self.navBar)
         self.navBar.addSubview(self.backBtn)
@@ -95,7 +95,7 @@ class ChatNavigationView: UIView {
     }
     
     
-    private func configContraints(){
+    private func configContraints() {
     
         NSLayoutConstraint.activate([
         

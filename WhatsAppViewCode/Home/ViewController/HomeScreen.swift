@@ -36,21 +36,21 @@ class HomeScreen: UIView {
         self.setUpConstraints()
     }
     
-    public func delegateCollectionView(delegate: UICollectionViewDelegate, dataSource:UICollectionViewDataSource){
+    public func delegateCollectionView(delegate: UICollectionViewDelegate, dataSource:UICollectionViewDataSource) {
         self.collectionView.delegate = delegate
         self.collectionView.dataSource = dataSource
     }
     
-    public func reloadColletionView(){
+    public func reloadColletionView() {
         self.collectionView.reloadData()
     }
     
-    private func addElemented(){
+    private func addElemented() {
         self.addSubview(self.navView)
         self.addSubview(self.collectionView)
     }
     
-    private func setUpConstraints(){
+    private func setUpConstraints() {
         NSLayoutConstraint.activate([
         
             

@@ -16,7 +16,7 @@ class ChatViewScreen: UIView {
     
     weak private var delegate:ChatViewScreenProtocol?
     
-    public func delegate(delegate:ChatViewScreenProtocol?){
+    public func delegate(delegate:ChatViewScreenProtocol?) {
         self.delegate = delegate
     }
     
@@ -81,16 +81,16 @@ class ChatViewScreen: UIView {
         return table
     }()
     
-    public func configTableView(delegate:UITableViewDelegate,dataSource:UITableViewDataSource){
+    public func configTableView(delegate:UITableViewDelegate,dataSource:UITableViewDataSource) {
         self.tableView.delegate = delegate
         self.tableView.dataSource = dataSource
     }
     
-    public func reloadTableView(){
+    public func reloadTableView() {
         self.tableView.reloadData()
     }
     
-    func configNavView(controller:ChatViewController){
+    func configNavView(controller:ChatViewController) {
         self.navView.controller = controller
     }
 
@@ -124,7 +124,7 @@ class ChatViewScreen: UIView {
     }
     
     
-    private func setupContraints(){
+    private func setupContraints() {
         NSLayoutConstraint.activate([
             
             self.navView.topAnchor.constraint(equalTo: self.topAnchor),
@@ -159,7 +159,7 @@ class ChatViewScreen: UIView {
         ])
     }
     
-    @objc func handleKeyboardNotification(notification: NSNotification){
+    @objc func handleKeyboardNotification(notification: NSNotification) {
 
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
@@ -180,7 +180,7 @@ class ChatViewScreen: UIView {
     }
     
     
-    @objc func sendBtnPressed(){
+    @objc func sendBtnPressed() {
         self.sendBtn.touchAnimation(s: self.sendBtn)
         self.playSound()
         self.delegate?.actionPushMessage()
@@ -200,7 +200,7 @@ class ChatViewScreen: UIView {
         }
     }
     
-    public func startPushMessage(){
+    public func startPushMessage() {
         self.inputMessageTextField.text = ""
         self.sendBtn.isEnabled = false
         self.sendBtn.layer.opacity = 0.4
@@ -215,7 +215,7 @@ class ChatViewScreen: UIView {
     
 }
 
-extension ChatViewScreen:UITextFieldDelegate{
+extension ChatViewScreen:UITextFieldDelegate {
     
     //MARK:- Animating
     @objc func textFieldDidChange(_ textField: UITextField) {

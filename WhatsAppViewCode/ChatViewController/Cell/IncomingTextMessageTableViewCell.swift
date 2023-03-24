@@ -37,14 +37,14 @@ class IncomingTextMessageTableViewCell: UITableViewCell {
 
     }
     
-    func addElemented(){
+    func addElemented() {
         self.addSubview(self.contactMessage)
         self.contactMessage.addSubview(self.messageTextLabel)
         self.isSelected = false
     }
     
     
-    func setupContraints(){
+    func setupContraints() {
         
         NSLayoutConstraint.activate([
             self.contactMessage.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 20),
@@ -63,7 +63,7 @@ class IncomingTextMessageTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func setupCell(message:Message?){
+    public func setupCell(message:Message?) {
         self.messageTextLabel.text = message?.texto ?? ""
     }
     

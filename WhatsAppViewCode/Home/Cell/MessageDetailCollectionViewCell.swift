@@ -37,7 +37,7 @@ class MessageDetailCollectionViewCell: UICollectionViewCell {
         
     }
     
-    private func setUpContraints(){
+    private func setUpContraints() {
         
         NSLayoutConstraint.activate([
         
@@ -59,25 +59,25 @@ class MessageDetailCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func seuUpViewContact(contact: Contact){
+    func seuUpViewContact(contact: Contact) {
         
         self.setUserName(userName: contact.nome ?? "")
         
     }
     
-    func seuUpViewConversation(conversation: Conversation){
+    func seuUpViewConversation(conversation: Conversation) {
         
         self.setUserNameAttributedText(conversation: conversation)
         
     }
     
-    func setUserName(userName: String){
+    func setUserName(userName: String) {
         
         _ = NSMutableAttributedString(string: userName, attributes: [NSAttributedString.Key.font : UIFont(name: CustomFont.poppinsMedium, size: 16) ?? UIFont(), NSAttributedString.Key.foregroundColor: UIColor.darkGray])
         
     }
     
-    func setUserNameAttributedText(conversation: Conversation){
+    func setUserNameAttributedText(conversation: Conversation) {
         
         let attributText = NSMutableAttributedString(string: "\(conversation.nome ?? "")", attributes: [NSAttributedString.Key.font : UIFont(name: CustomFont.poppinsMedium, size: 16) ?? UIFont(), NSAttributedString.Key.foregroundColor: UIColor.darkGray])
         

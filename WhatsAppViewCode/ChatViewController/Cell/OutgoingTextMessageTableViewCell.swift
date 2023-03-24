@@ -36,14 +36,14 @@ class OutgoingTextMessageTableViewCell: UITableViewCell {
         self.backgroundColor = .clear
     }
     
-    func addElemented(){
+    func addElemented() {
         self.addSubview(self.myMessageView)
         self.myMessageView.addSubview(self.messageTextLabel)
         self.isSelected = false
     }
     
     
-    func setupContraints(){
+    func setupContraints() {
         
         NSLayoutConstraint.activate([
             self.myMessageView.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -20),
@@ -62,7 +62,7 @@ class OutgoingTextMessageTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func setupCell(message:Message?){
+    public func setupCell(message:Message?) {
         self.messageTextLabel.text = message?.texto ?? ""
     }
 

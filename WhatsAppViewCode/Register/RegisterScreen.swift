@@ -17,7 +17,7 @@ class RegisterScreen: UIView {
 
     weak private var delegate: RegisterScreenProtocol?
     
-    func delegate(delegate: RegisterScreenProtocol){
+    func delegate(delegate: RegisterScreenProtocol) {
         self.delegate = delegate
     }
     
@@ -101,7 +101,7 @@ class RegisterScreen: UIView {
         
     }
     
-    private func configSuperView(){
+    private func configSuperView() {
         self.addSubview(self.backButtom)
         self.addSubview(self.imageAddUser)
         self.addSubview(self.nameTextField)
@@ -110,58 +110,56 @@ class RegisterScreen: UIView {
         self.addSubview(self.registerButton)
     }
     
-    private func configBackground(){
+    private func configBackground() {
         self.backgroundColor = UIColor(red: 24/255, green: 117/255, blue: 104/255, alpha: 1.0)
     }
     
-    public func confTextFieldDelegate (delegate: UITextFieldDelegate){
+    public func confTextFieldDelegate (delegate: UITextFieldDelegate) {
         self.nameTextField.delegate = delegate
         self.emailTextField.delegate = delegate
         self.passwordTextField.delegate = delegate
     }
     
-    @objc private func tappedBackButton(){
+    @objc private func tappedBackButton() {
         self.delegate?.actionBackButton()
     }
     
-    @objc private func tappedRegisterButton(){
+    @objc private func tappedRegisterButton() {
         self.delegate?.actionRegisterButton()
     }
     
-    public func validaTextFields(){
+    public func validaTextFields() {
         
         let name: String = self.nameTextField.text ?? ""
         let email: String = self.emailTextField.text ?? ""
         let password: String = self.passwordTextField.text ?? ""
         
-        if !name.isEmpty && !email.isEmpty && !password.isEmpty{
+        if !name.isEmpty && !email.isEmpty && !password.isEmpty {
             self.configButtonEnable(enable: true)
-        }else{
+        } else {
             self.configButtonEnable(enable: false)
-
         }
-        
     }
-    private func configButtonEnable(enable: Bool){
-        if enable{
+    private func configButtonEnable(enable: Bool) {
+        if enable {
             self.registerButton.setTitleColor(.white, for: .normal)
             self.registerButton.isEnabled = true
-        }else{
+        } else {
             self.registerButton.setTitleColor(.darkGray, for: .normal)
             self.registerButton.isEnabled = false
         }
         
     }
     
-    public func getName() -> String{
+    public func getName() -> String {
         return self.nameTextField.text!
     }
     
-    public func getEmail() -> String{
+    public func getEmail() -> String {
         return self.emailTextField.text!
     }
     
-    public func getPassword() -> String{
+    public func getPassword() -> String {
         return self.passwordTextField.text!
     }
     
@@ -169,7 +167,7 @@ class RegisterScreen: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupContrainsts(){
+    private func setupContrainsts() {
         NSLayoutConstraint.activate([
         
             self.imageAddUser.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20),

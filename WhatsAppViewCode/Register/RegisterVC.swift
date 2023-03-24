@@ -32,7 +32,7 @@ class RegisterVC: UIViewController {
 
 }
 
-extension RegisterVC: UITextFieldDelegate{
+extension RegisterVC: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -45,7 +45,7 @@ extension RegisterVC: UITextFieldDelegate{
     
 }
 
-extension RegisterVC: RegisterScreenProtocol{
+extension RegisterVC: RegisterScreenProtocol {
     
     func actionBackButton() {
         self.navigationController?.popViewController(animated: true)
@@ -61,7 +61,7 @@ extension RegisterVC: RegisterScreenProtocol{
                 
                 let erroR = error! as NSError
                 
-                if let codigoErro = erroR.userInfo["FIRAuthErrorUserInfoNameKey"]{
+                if let codigoErro = erroR.userInfo["FIRAuthErrorUserInfoNameKey"] {
                     
                     let erroTexto = codigoErro as! String
                     var mensagemErro = ""

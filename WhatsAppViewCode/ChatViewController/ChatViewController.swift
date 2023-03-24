@@ -42,9 +42,9 @@ class ChatViewController: UIViewController {
         self.mensagensListener?.remove()
     }
     
-    func addListenerRecuperarMensagens(){
+    func addListenerRecuperarMensagens() {
         
-        if let idDestinatario = self.contato?.id{
+        if let idDestinatario = self.contato?.id {
             
             mensagensListener = db?.collection("mensagens").document(self.idUsuarioLogado ?? "").collection(idDestinatario).order(by: "data",descending: true).addSnapshotListener({ querySnapshot, error in
                 
@@ -52,8 +52,8 @@ class ChatViewController: UIViewController {
                 self.listaMensagens.removeAll()
                 
                 //Recuperar dados
-                if let snapshot = querySnapshot{
-                    for document in snapshot.documents{
+                if let snapshot = querySnapshot {
+                    for document in snapshot.documents {
                         let dados = document.data()
                         self.listaMensagens.append(Message(dicionario: dados))
                     }
@@ -67,18 +67,18 @@ class ChatViewController: UIViewController {
     }
 
     
-    private func configDataFirebase(){
+    private func configDataFirebase() {
         self.auth = Auth.auth()
         self.db = Firestore.firestore()
         
         
         //Recuperar Id Usuario Logado
-        if let id = self.auth?.currentUser?.uid{
+        if let id = self.auth?.currentUser?.uid {
             self.idUsuarioLogado = id
             self.recuperarDadosUsuarioLogado()
         }
         
-        if let nome = self.contato?.nome{
+        if let nome = self.contato?.nome {
             self.nomeContato = nome
         }
         
@@ -86,34 +86,34 @@ class ChatViewController: UIViewController {
     }
     
     
-    private func recuperarDadosUsuarioLogado(){
+    private func recuperarDadosUsuarioLogado() {
         let usuarios = self.db?.collection("usuarios").document(self.idUsuarioLogado ?? "")
         usuarios?.getDocument(completion: { documentSnapshot, error in
-            if error == nil{
+            if error == nil {
                 let dados:Contact = Contact(dicionario: documentSnapshot?.data() ?? [:])
                 self.nomeUsuarioLogado = dados.nome ?? ""
             }
         })
     }
     
-    private func configChatView(){
+    private func configChatView() {
         self.screen?.configNavView(controller: self)
         self.screen?.configTableView(delegate: self, dataSource: self)
         self.screen?.delegate(delegate: self)
     }
     
     
-    @objc func tappedBackButton(){
+    @objc func tappedBackButton() {
         self.navigationController?.popToRootViewController(animated: true)
     }
     
-    private func salvarMensagem(idRemetente:String,idDestinatario:String,mensagem:[String:Any]){
+    private func salvarMensagem(idRemetente:String,idDestinatario:String,mensagem:[String:Any]) {
         db?.collection("mensagens").document(idRemetente).collection(idDestinatario).addDocument(data: mensagem)
         //limpar caixa de texto
         screen?.inputMessageTextField.text = ""
     }
     
-    private func salvarConversa(idRemetente:String,idDestinatario:String,conversa:[String:Any]){
+    private func salvarConversa(idRemetente:String,idDestinatario:String,conversa:[String:Any]) {
         db?.collection("conversas").document(idRemetente).collection("ultimas_conversas").document(idDestinatario).setData(conversa)
         
     }
@@ -121,7 +121,7 @@ class ChatViewController: UIViewController {
     
 }
 
-extension ChatViewController:UITableViewDelegate,UITableViewDataSource{
+extension ChatViewController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.listaMensagens.count
     }
@@ -133,7 +133,7 @@ extension ChatViewController:UITableViewDelegate,UITableViewDataSource{
         let idUsuario = dados.idUsuario ?? ""
         
         
-        if self.idUsuarioLogado != idUsuario{
+        if self.idUsuarioLogado != idUsuario {
             //LADO ESQUERDO
             let cell = tableView.dequeueReusableCell(withIdentifier: IncomingTextMessageTableViewCell.identifier, for: indexPath) as? IncomingTextMessageTableViewCell
             cell?.transform = CGAffineTransform(scaleX: 1, y: -1)
@@ -160,13 +160,13 @@ extension ChatViewController:UITableViewDelegate,UITableViewDataSource{
 }
 
 
-extension ChatViewController:ChatViewScreenProtocol{
+extension ChatViewController:ChatViewScreenProtocol {
     
     func actionPushMessage() {
         
         let message:String = self.screen?.inputMessageTextField.text ?? ""
         
-        if let idUsuarioDestinatario = contato?.id{
+        if let idUsuarioDestinatario = contato?.id {
             
             let mensagem:Dictionary<String,Any> = [
                 "idUsuario" : self.idUsuarioLogado ?? "",

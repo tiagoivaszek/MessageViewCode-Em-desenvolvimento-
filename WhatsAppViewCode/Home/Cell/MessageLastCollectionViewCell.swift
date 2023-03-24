@@ -39,7 +39,7 @@ class MessageLastCollectionViewCell: UICollectionViewCell {
         
     }
     
-    private func setUpContraints(){
+    private func setUpContraints() {
         
         NSLayoutConstraint.activate([
         

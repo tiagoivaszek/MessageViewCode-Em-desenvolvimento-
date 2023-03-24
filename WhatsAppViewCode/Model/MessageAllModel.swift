@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Message{
+class Message {
     
     var texto: String?
     var idUsuario: String?
@@ -18,7 +18,7 @@ class Message{
     }
 }
 
-class Conversation{
+class Conversation {
     
     var nome: String?
     var ultimaMensagem: String?
@@ -30,10 +30,9 @@ class Conversation{
         self.idDestinatario = dicionario["idDestinatario"] as? String
 
     }
-
 }
 
-class User{
+class User {
     
     var nome: String?
     var email: String?
@@ -45,7 +44,7 @@ class User{
     }
 }
 
-class Contact{
+class Contact {
     
     var nome: String?
     var id: String?

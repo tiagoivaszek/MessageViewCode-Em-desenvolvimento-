@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class Alert: NSObject{
+class Alert: NSObject {
     
     var controller: UIViewController
     
@@ -16,7 +16,7 @@ class Alert: NSObject{
         self.controller = controller
     }
     
-    func getAlert(titulo: String, mensagem: String, completion:(()-> Void)? = nil){
+    func getAlert(titulo: String, mensagem: String, completion:(()-> Void)? = nil) {
         
         let alertController = UIAlertController(title: titulo, message: mensagem, preferredStyle: .alert)
         let cancelar = UIAlertAction(title: "Ok", style: .cancel) { acao in
@@ -26,7 +26,7 @@ class Alert: NSObject{
         self.controller.present(alertController, animated: true)
     }
     
-    func addContact(completion:((_ value:String) -> Void)? = nil){
+    func addContact(completion:((_ value:String) -> Void)? = nil) {
         var _textField:UITextField?
         let alert = UIAlertController(title: "Adicionar Usuario", message: "Digite uma email Valido", preferredStyle: .alert)
         let ok = UIAlertAction(title: "Adicionar", style: .default) { (acao) in

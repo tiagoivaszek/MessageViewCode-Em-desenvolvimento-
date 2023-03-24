@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum TypeConversationOrContact{
+enum TypeConversationOrContact {
     case conversation
     case contact
 }
@@ -82,12 +82,12 @@ class NavView: UIView {
         return button
     }()
     
-    @objc func tappedConversationButton(){
+    @objc func tappedConversationButton() {
         self.delegate?.typeScreenMessagem(type: .conversation)
         self.conversationButton.tintColor = .systemPink
         self.contactButton.tintColor = .black
     }
-    @objc func tappedContactButton(){
+    @objc func tappedContactButton() {
         self.delegate?.typeScreenMessagem(type: .contact)
         self.conversationButton.tintColor = .black
         self.contactButton.tintColor = .systemPink
@@ -101,7 +101,7 @@ class NavView: UIView {
         
     }
     
-    private func addElemented(){
+    private func addElemented() {
         self.addSubview(self.navBackGroundView)
         self.navBackGroundView.addSubview(navBar)
         self.navBar.addSubview(self.searchBar)
@@ -112,7 +112,7 @@ class NavView: UIView {
 
     }
     
-    private func setUpContrainsts(){
+    private func setUpContrainsts() {
         NSLayoutConstraint.activate([
             
             self.navBackGroundView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
