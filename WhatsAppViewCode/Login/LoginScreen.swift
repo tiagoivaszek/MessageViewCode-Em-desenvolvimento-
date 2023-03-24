@@ -101,12 +101,11 @@ class LoginScreen: UIView {
     }
     
 
-    private func configBackground(){
+    private func configBackground() {
         self.backgroundColor = UIColor(red: 24/255, green: 117/255, blue: 104/255, alpha: 1.0)
-
     }
     
-    private func configSuperView(){
+    private func configSuperView() {
         self.addSubview(self.loginLabel)
         self.addSubview(self.logoAppImageView)
         self.addSubview(self.emailTextField)
@@ -115,33 +114,32 @@ class LoginScreen: UIView {
         self.addSubview(self.registerButton)
     }
     
-    public func configTextFieldDelegate(delegate: UITextFieldDelegate){
+    public func configTextFieldDelegate(delegate: UITextFieldDelegate) {
         self.emailTextField.delegate = delegate
         self.passwordTextField.delegate = delegate
     }
     
-    @objc private func tappedLoginButton(){
+    @objc private func tappedLoginButton() {
         self.delegate?.actionLoginButton()
     }
     
-    @objc private func tappedRegisterButton(){
+    @objc private func tappedRegisterButton() {
         self.delegate?.actionRegisterButton()
     }
     
-    public func validaTextFields(){
+    public func validaTextFields() {
         
         let email: String = self.emailTextField.text ?? ""
         let password: String = self.passwordTextField.text ?? ""
         
-        if !email.isEmpty && !password.isEmpty{
+        if !email.isEmpty && !password.isEmpty {
             self.configButtonEnable(enable: true)
         }else{
             self.configButtonEnable(enable: false)
-
         }
-        
     }
-    private func configButtonEnable(enable: Bool){
+    
+    private func configButtonEnable(enable: Bool) {
         if enable{
             self.loginButton.setTitleColor(.white, for: .normal)
             self.loginButton.isEnabled = true
@@ -149,18 +147,17 @@ class LoginScreen: UIView {
             self.loginButton.setTitleColor(.darkGray, for: .normal)
             self.loginButton.isEnabled = false
         }
-        
     }
     
-    public func getEmail() -> String{
+    public func getEmail() -> String {
         return self.emailTextField.text!
     }
     
-    public func getPassword() -> String{
+    public func getPassword() -> String {
         return self.passwordTextField.text!
     }
     
-    private func setUpContraints(){
+    private func setUpContraints() {
         NSLayoutConstraint.activate([
             
             self.loginLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20),
@@ -199,13 +196,9 @@ class LoginScreen: UIView {
             
         ])
         
-        
     }
     
 //offset = valor positivo
 //inset = valor negativo
-
-
-    
 
 }
